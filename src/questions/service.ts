@@ -20,6 +20,7 @@ export class QuestionsService {
 				.get('')
 				.subscribe(response => {
 					this.subject.next(response.json())
+					resolve(response.json())
 				}),
 				error => {
 					this.subject.error(error.json())

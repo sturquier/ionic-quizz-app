@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Question } from './models'
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsService } from './service'
@@ -9,22 +9,24 @@ import { QuestionsService } from './service'
 })
 
 export class Questions {
-	public questions: Question[];
+	public questions: Question[] = [];
 	public question: Question;
 	page: number = 1;
 
 	constructor(public navController: NavController, navParams: NavParams, public questionsServices: QuestionsService) {
-		this.questions = []
+		// this.questions = []
 		this.question = navParams.get('question');
 	}
 
-	ionViewWillEnter() {
+	ngOnInit() {
 		this.questionsServices.loadQuestions();
 		this.questionsServices
 			.subject
 			.asObservable()
-			.subscribe(questions => this.questions = questions)
-		console.log(this.questions)
+			.subscribe(res => {
+				this.questions = res['results']
+				console.log(res['results'])
+			}, err => console.error(err));
 	}
 
 	refresh(event) {
