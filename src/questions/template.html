@@ -1,19 +1,22 @@
 <ion-header>
     <ion-navbar>
         <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
+            <ion-icon name='menu'></ion-icon>
         </button>
         <ion-title>Quizz</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <questions-component *ngIf="question; else questionsList" [questions]="questions"></questions-component>
-    <ng-template #questionssList>
+    <!-- Pour le rafraishissement des questions -->
+    <ion-refresher (ionRefresh)='refresh($event)'>
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ng-template>
         <ion-list>
-            <ion-item *ngFor="let question of questionss">
-                <questions-component [questions]="question" (click)="openquestions(questions)"></questions-component>
+            <ion-item *ngFor='let question of questions'>
+                <p>{{ question }}</p>
             </ion-item>
         </ion-list>
     </ng-template>
-</ion-content>

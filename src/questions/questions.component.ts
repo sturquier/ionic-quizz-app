@@ -14,6 +14,7 @@ export class Questions {
 	page: number = 1;
 
 	constructor(public navController: NavController, navParams: NavParams, public questionsServices: QuestionsService) {
+		this.questions = []
 		this.question = navParams.get('question');
 	}
 
@@ -22,7 +23,8 @@ export class Questions {
 		this.questionsServices
 			.subject
 			.asObservable()
-			.subscribe(questions => this.questions = this.questions)
+			.subscribe(questions => this.questions = questions)
+		console.log(this.questions)
 	}
 
 	refresh(event) {
