@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Question } from './models'
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsService } from './service'
@@ -25,7 +25,6 @@ export class Questions {
 			.asObservable()
 			.subscribe(res => {
 				this.questions = res['results']
-				console.log(res['results'])
 			}, err => console.error(err));
 	}
 

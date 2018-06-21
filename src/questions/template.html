@@ -1,5 +1,8 @@
 <ion-content>
     <div *ngFor='let question of questions'>
-        <p>{{ question.category }}</p>
+        <div [innerHTML]="question.question">
+            <p>{{ question.category }}</p>
+            <p>{{ question.question }}</p>
+        </div>
     </div>
 </ion-content>
