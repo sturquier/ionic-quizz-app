@@ -22,7 +22,7 @@ export class Questions {
 		this.questionsServices
 			.subject
 			.asObservable()
-			.subscribe(messages => this.questions = this.questions)
+			.subscribe(questions => this.questions = this.questions)
 	}
 
 	refresh(event) {
