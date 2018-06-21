@@ -4,6 +4,7 @@ import { Config } from "./config";
 
 @Injectable()
 export class HttpQuestionsService {
+	
     constructor(public http: Http, public config: Config) {
     }
 
