@@ -7,6 +7,7 @@ import { QuestionsModule } from '../questions/module'
 import { SharedModule } from '../shared/module'
 import { PlayerModule } from '../player/module'
 import { HomeModule } from '../home/module'
+import { LeaderboardModule } from '../leaderboard/module'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     QuestionsModule,
     SharedModule,
     PlayerModule,
-    HomeModule
+    HomeModule,
+    LeaderboardModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

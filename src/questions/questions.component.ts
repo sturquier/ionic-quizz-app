@@ -3,6 +3,7 @@ import { Question } from '../shared/models'
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsService } from './service'
 import { Slides } from 'ionic-angular';
+import { Leaderboard } from "../leaderboard/leaderboard.component";
 
 @Component({
 	selector: 'questions',
@@ -51,8 +52,15 @@ export class Questions {
 	}
 
 	changeSlide() {
-		this.slides.slideNext()
-		this.slides.lockSwipes(true)
+		if (this.slides.getActiveIndex() == 19) {
+			localStorage.setItem('difficulty', this.difficulty)
+			localStorage.setItem('score', this.score.toString())
+			localStorage.setItem('playerName', localStorage.getItem('playerName'))
+			this.navController.push(Leaderboard)
+		} else {
+			this.slides.slideNext()
+			this.slides.lockSwipes(true)
+		}
 	}
 
 	checkAnswer(answer, correct_answer) {

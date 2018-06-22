@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Leaderboard</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div>
+		<p>Hi {{ playerName }}</p>
+		<p>You just played in difficulty {{ difficulty }}</p>
+		<p>Your score is {{ score }}</p>
+		<br>
+		<p>You can send your score to https://leaderboard.lp1.eu/ by clicking on this button :</p>
+		<button ion-button (click)="sendScore()">Send score</button>
+	</div>
+</ion-content>

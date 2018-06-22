@@ -24,6 +24,7 @@ export class Home {
 
 	selectDifficulty(difficulty) {
 		localStorage.setItem('difficulty', difficulty)
+		localStorage.setItem('playerName', localStorage.getItem('playerName'))
 		this.toast.present()
 		this.nav.push(Questions)
 	}

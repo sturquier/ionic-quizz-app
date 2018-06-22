@@ -2,9 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { Questions } from '../questions/questions.component'
-import { Home } from '../home/home.component'
 import { Login } from '../player/login/login.component'
 
 @Component({
