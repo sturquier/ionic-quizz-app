@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Question } from './models'
+import { Question } from '../shared/models'
 import { HttpQuestionsService } from '../shared/http.questions.service'
 import { Subject } from 'rxjs/Subject'
 

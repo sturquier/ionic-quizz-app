@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { QuestionsModule } from '../questions/module'
 import { SharedModule } from '../shared/module'
+import { PlayerModule } from '../player/module'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     QuestionsModule,
-    SharedModule
+    SharedModule,
+    PlayerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { Question } from './models'
+import { Question } from '../shared/models'
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsService } from './service'
 

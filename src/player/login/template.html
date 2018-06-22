@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>User Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label floating>login</ion-label>
+        <ion-input [(ngModel)]="playerName"></ion-input>
+    </ion-item>
+    <div>
+        <button ion-button (click)="login()">Login</button>
+    </div>
+</ion-content>
