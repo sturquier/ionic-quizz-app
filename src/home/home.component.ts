@@ -1,17 +1,31 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Toast, ToastController, NavController, NavParams } from 'ionic-angular';
+import { Questions } from '../questions/questions.component'
 
 @Component({
 	selector: 'home',
 	templateUrl: 'template.html',
 })
 export class Home {
-	difficulty: string = '';
+	private difficulty = '';
+	private toast: Toast;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {}
+	constructor(public nav: NavController, public toastCtrl: ToastController) {
+		this.toast = toastCtrl.create({
+			message: 'Difficulty successfully choosed',
+			duration: 3000,
+			position: 'top'
+		})
+
+		if (localStorage.getItem('difficulty') !== null) {
+			this.difficulty = localStorage.getItem('difficulty')
+		}
+	}
 
 	selectDifficulty(difficulty) {
-		console.log(difficulty)
+		localStorage.setItem('difficulty', difficulty)
+		this.toast.present()
+		this.nav.push(Questions)
 	}
 
 }

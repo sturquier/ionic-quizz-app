@@ -13,11 +13,11 @@ export class QuestionsService {
 
 	}
 
-	loadQuestions() {
+	loadQuestions(difficulty) {
 		return new Promise((resolve, reject) => {
 			this
 				.httpQuestionsService
-				.get('')
+				.get(difficulty)
 				.subscribe(response => {
 					this.subject.next(response.json())
 					resolve(response.json())

@@ -14,14 +14,15 @@ export class Questions {
 	public question: Question;
 	@ViewChild(Slides) slides: Slides;
 	public score = 0;
+	public difficulty = ''
 
 	constructor(public navController: NavController, navParams: NavParams, public questionsServices: QuestionsService) {
 		this.question = navParams.get('question');
-		// console.log(this.slides.getActiveIndex())
+		this.difficulty = localStorage.getItem('difficulty')
 	}
 
 	ngOnInit() {
-		this.questionsServices.loadQuestions();
+		this.questionsServices.loadQuestions(this.difficulty);
 		this.questionsServices
 			.subject
 			.asObservable()
@@ -40,7 +41,7 @@ export class Questions {
 	refresh(event) {
 		this
 			.questionsServices
-			.loadQuestions()
+			.loadQuestions(this.difficulty)
 			.then(response => {
 				event.complete();
 			})

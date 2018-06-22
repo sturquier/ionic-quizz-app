@@ -13,6 +13,7 @@ export class Login {
         avatar: ''
     };
     private toast: Toast;
+    private difficulty: ''
 
     constructor(public toastCtrl:ToastController, public nav: NavController) {
         this.toast = toastCtrl.create({

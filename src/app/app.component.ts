@@ -15,17 +15,8 @@ export class MyApp {
 
   rootPage: any = Login;
 
-  pages: Array<{title: string, component: any}>;
-
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Login', component: Login },
-      { title: 'Home', component: Home },
-      { title: 'Questions', component: Questions }
-    ];
 
   }
 
