@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Toast, ToastController, NavController } from 'ionic-angular';
-import { Questions } from "../../questions/questions.component";
+import { Home } from "../../home/home.component";
 import { Player } from "../../shared/models";
 
 @Component({
@@ -29,6 +29,6 @@ export class Login {
     login(playerName) {
         localStorage.setItem('playerName', playerName)
         this.toast.present()
-        this.nav.push(Questions)
+        this.nav.push(Home)
     }
 }

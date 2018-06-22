@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { QuestionsModule } from '../questions/module'
 import { SharedModule } from '../shared/module'
 import { PlayerModule } from '../player/module'
+import { HomeModule } from '../home/module'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     IonicModule.forRoot(MyApp),
     QuestionsModule,
     SharedModule,
-    PlayerModule
+    PlayerModule,
+    HomeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

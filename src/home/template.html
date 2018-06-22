@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>HomePage</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div>
+		<h4>Welcome on Ionic Quizz App</h4>
+		<hr/>
+		<p>Select your difficulty</p>
+
+		<button ion-button outline (click)='selectDifficulty("easy")'>Easy</button>
+			<button ion-button outline (click)='selectDifficulty("medium")'>Medium</button>
+			<button ion-button outline (click)='selectDifficulty("hard")'>Hard</button>
+
+	</div>
+</ion-content>
