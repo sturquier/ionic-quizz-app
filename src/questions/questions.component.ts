@@ -1,7 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, ViewChild } from '@angular/core'
 import { Question } from '../shared/models'
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionsService } from './service'
+import { Slides } from 'ionic-angular';
 
 @Component({
 	selector: 'questions',
@@ -12,6 +13,7 @@ export class Questions {
 	public questions: Question[] = [];
 	public question: Question;
 	page: number = 1;
+	@ViewChild(Slides) slides: Slides;
 
 	constructor(public navController: NavController, navParams: NavParams, public questionsServices: QuestionsService) {
 		// this.questions = []

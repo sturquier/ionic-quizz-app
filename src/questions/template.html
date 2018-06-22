@@ -7,13 +7,12 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <div *ngFor='let question of questions'>
+<ion-slides>
+    <ion-slide *ngFor='let question of questions'>
         <p [innerHTML]="question.category">{{ question.category }}</p>
         <p [innerHTML]="question.question">{{ question.question }}</p>
         <ul *ngFor='let answer of question.answers'>
         	<li [innerHTML]="answer">{{ answer }}</li>
         </ul>
-    </div>
-    <hr/>
-</ion-content>
+    </ion-slide>
+</ion-slides>
