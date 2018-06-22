@@ -12,12 +12,12 @@ import { Slides } from 'ionic-angular';
 export class Questions {
 	public questions: Question[] = [];
 	public question: Question;
-	page: number = 1;
 	@ViewChild(Slides) slides: Slides;
+	public score = 0;
 
 	constructor(public navController: NavController, navParams: NavParams, public questionsServices: QuestionsService) {
-		// this.questions = []
 		this.question = navParams.get('question');
+		// console.log(this.slides.getActiveIndex())
 	}
 
 	ngOnInit() {
@@ -47,5 +47,23 @@ export class Questions {
 			.catch(error =>{
 				event.complete();
 			})
+	}
+
+	changeSlide() {
+		this.slides.slideNext()
+		this.slides.lockSwipes(true)
+	}
+
+	checkAnswer(answer, correct_answer) {
+		if (answer == correct_answer) {
+			this.score += 10;
+			alert('GOOD ANSWER. SCORE = ' + this.score)
+		} else {
+			this.score -= 10;
+			alert('WRONG ANSWER. SCORE = ' + this.score)
+		}
+
+		this.slides.lockSwipes(false)
+		this.changeSlide()
 	}
 }

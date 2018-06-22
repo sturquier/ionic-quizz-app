@@ -7,12 +7,13 @@
     </ion-navbar>
 </ion-header>
 
-<ion-slides>
+<ion-slides #slides (ionSlideDidChange)="changeSlide()">
     <ion-slide *ngFor='let question of questions'>
-        <p [innerHTML]="question.category">{{ question.category }}</p>
+        <h4 [innerHTML]="question.category">{{ question.category }}</h4>
+        <hr>
         <p [innerHTML]="question.question">{{ question.question }}</p>
         <ul *ngFor='let answer of question.answers'>
-        	<li [innerHTML]="answer">{{ answer }}</li>
+        	<li [innerHTML]="answer" (click)='checkAnswer(answer, question.correct_answer)'>{{ answer }}</li>
         </ul>
     </ion-slide>
 </ion-slides>
