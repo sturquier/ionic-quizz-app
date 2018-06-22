@@ -25,6 +25,13 @@ export class Questions {
 			.asObservable()
 			.subscribe(res => {
 				this.questions = res['results']
+				let groupedAnswers = []
+				this.questions.forEach(question => {
+					groupedAnswers = question.incorrect_answers
+					groupedAnswers.push(question.correct_answer)
+					question['answers'] = groupedAnswers.sort()
+
+				})
 			}, err => console.error(err));
 	}
 
