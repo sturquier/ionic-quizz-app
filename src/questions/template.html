@@ -9,15 +9,13 @@
 
 <ion-slides #slides (ionSlideDidChange)="changeSlide()">
     <ion-slide *ngFor='let question of questions'>
-        <h4 [innerHTML]="question.category">Category : {{ question.category }}</h4>
-        <br>
         <h4>Difficulty : {{ difficulty }}</h4>
         <br>
         <p>Your score is {{ score }}</p>
         <br>
         <p [innerHTML]="question.question">{{ question.question }}</p>
         <ul *ngFor='let answer of question.answers'>
-        	<li [innerHTML]="answer" (click)='checkAnswer(answer, question.correct_answer)'>{{ answer }}</li>
+        	<button ion-button outline [innerHTML]="answer" (click)='checkAnswer(answer, question.correct_answer)'>{{ answer }}</button>
         </ul>
     </ion-slide>
 </ion-slides>
