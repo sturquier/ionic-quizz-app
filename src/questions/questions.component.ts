@@ -56,12 +56,28 @@ export class Questions {
 	}
 
 	checkAnswer(answer, correct_answer) {
-		if (answer == correct_answer) {
-			this.score += 10;
-			alert('GOOD ANSWER. SCORE = ' + this.score)
-		} else {
-			this.score -= 10;
-			alert('WRONG ANSWER. SCORE = ' + this.score)
+		switch (this.difficulty) {
+			case "easy":
+				if (answer == correct_answer) {
+					this.score += 5;
+				} else {
+					this.score -= 5;
+				}
+				break;
+			case "medium":
+				if (answer == correct_answer) {
+					this.score += 10;
+				} else {
+					this.score -= 10;
+				}
+				break;
+			case "hard":
+				if (answer == correct_answer) {
+					this.score += 20;
+				} else {
+					this.score -= 20;
+				}
+				break;
 		}
 
 		this.slides.lockSwipes(false)
